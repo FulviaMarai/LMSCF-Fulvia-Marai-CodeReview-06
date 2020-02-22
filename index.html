@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css"  rel="stylesheet" type="text/css"  media="all">
+<link href="css/bootstrap-grid.css"  rel="stylesheet" type="text/css"  media="all">
+<link href= "css/style.css" rel="stylesheet" type= "text/css" media="all">
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+<title>Travel Blog Code Review 06</title>
+
+</head>
+<body>
+<header>
+	<div class="pos-f-t">
+  		<div class="collapse" id="navbarToggleExternalContent">
+   			 <div class=" p-4 text-center">
+      			<h1>My little travels</h1>
+      			<p class="text-muted ">A journal for all the places i have visited & event i have partecipated </p>
+    		</div>
+  		</div>
+  		<nav class="navbar navbar-dark">
+   			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent,#navbarMini " aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      		<span class="navbar-toggler-icon"></span>
+    		</button>
+    	<div class="collapse" id="navbarMini">
+      			 <ul class="navbarMini">
+      				<li class="nav-item active">
+        				<a class="nav-link" href="#" id="asce">Ascending order </a>
+      				</li>
+      			<li class="nav-item">
+        				<a class="nav-link" href="#" id="disce">Descending order</a>
+     			 </li>
+     			</ul>
+    	</div>
+    		<h1> My little travels </h1>
+  		</nav>
+  	  </div>	
+
+</header>
+
+	
+	<div class="container transparent">
+		<div class="row text-center" id="gallery"></div>
+		</div>
+	</div>
+
+
+	<footer>
+		<p> </p>
+	</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/bootstrap.bundle.js"> </script>
+<script type="text/javascript" src ="script.js"></script>
+
+<script>
+	$(document).ready(function() {
+	generateBlogCard();
+});
+
+	var elementNode = document.getElementById('asce');
+      elementNode.addEventListener('click', asceOrd, false);
+
+</script>
+
+</body>
+</html>

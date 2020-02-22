@@ -1,0 +1,70 @@
+/* 
+#5C6E58#8AA899#F2D349 */
+
+
+body {
+	background-image: url("../img/back.jpg");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.container {
+	 background-image: linen;
+	 padding: 20px;
+	 border-radius: 10px;
+	 text-align: center;
+}
+
+.transparent{
+  background:rgba(255,255,255,0.5);
+}
+
+.navbar-toggler-icon {
+	border: none;
+
+}
+
+.navbarMini {
+	list-style-type: none;
+
+}
+li{
+	float: left;
+}
+
+h1 {
+	font-family: Dancing Script;
+	color : #5C6E58;
+}
+
+h5 {
+	color: #5C6E58;
+}
+
+
+.card {
+	max-height: 350px;
+	padding: 5px;
+}
+		
+.card-img-top {
+	width: 200px;
+	height: 150px;
+	padding: 2px;
+}
+
+.box {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 25px;
+  color: #F2D349;
+  background: #8AA899;
+}
