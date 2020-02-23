@@ -15,7 +15,7 @@
 	<div class="pos-f-t">
   		<div class="collapse" id="navbarToggleExternalContent">
    			 <div class=" p-4 text-center">
-      			<h1>My little travels</h1>
+      			<h2>My little travels</h2>
       			<p class="text-muted ">A journal for all the places i have visited & event i have partecipated </p>
     		</div>
   		</div>
@@ -23,17 +23,20 @@
    			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent,#navbarMini " aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
     		</button>
-    	<div class="collapse" id="navbarMini">
+    	   <div class="collapse" id="navbarMini">
       			 <ul class="navbarMini">
-      				<li class="nav-item active">
-        				<a class="nav-link" href="#" id="asce">Ascending order </a>
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html" id="index">Home</a>
+              </li>
+      				<li class="nav-item">
+        				<a class="nav-link" href="index-asc.html" id="asce">From old to new</a>
       				</li>
       			<li class="nav-item">
-        				<a class="nav-link" href="#" id="disce">Descending order</a>
+        				<a class="nav-link" href="index-desc.html" id="disce">From new to old</a>
      			 </li>
      			</ul>
-    	</div>
-    		<h1> My little travels </h1>
+    	 </div>
+    		<h1> <a href="index.html" > My little travels </a></h1>
   		</nav>
   	  </div>	
 
@@ -59,9 +62,6 @@
 	$(document).ready(function() {
 	generateBlogCard();
 });
-
-	var elementNode = document.getElementById('asce');
-      elementNode.addEventListener('click', asceOrd, false);
 
 </script>
 

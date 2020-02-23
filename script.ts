@@ -1,7 +1,7 @@
 let blogCard = [];
 
 class place {
-   date = ""; 
+   created = ""; 
    name = ""; 
    address = "";  
    zip = "";  
@@ -9,8 +9,8 @@ class place {
    teaser = "";
    
 
-constructor(date, name, address, zip, city, teaser) { 
-       this.date = date,
+constructor(created, name, address, zip, city, teaser) { 
+       this.created = created,
        this.name = name; 
        this.address = address;
        this.zip = zip;
@@ -24,7 +24,7 @@ display() {
         <div class="card bg-light">
           <div class="box d-none d-md-block relative">
             <img class="card-img-top" src="${this.teaser}" alt="${this.name}">
-             <div class="bottom-left em small">${this.date}</div>
+             <div class="bottom-left em small">${this.created}</div>
           </div>
           <div class="card-body">
             <h5 class="card-title">${this.name}</h5>
@@ -42,8 +42,8 @@ class restaurant  extends place {
   web = "";
 
 
- constructor(date, name, address, zip, city, teaser, tel, cuisine, web) {
-    super(date, name, address, zip, city, teaser,);
+ constructor(created, name, address, zip, city, teaser, tel, cuisine, web) {
+    super(created, name, address, zip, city, teaser,);
     this.tel = tel;
     this.cuisine = cuisine;
     this.web = web;
@@ -54,7 +54,7 @@ class restaurant  extends place {
         <div class="card bg-light">
           <div class="box d-none d-md-block relative">
             <img class="card-img-top" src="${this.teaser}" alt="${this.name}">
-               <div class="bottom-left em small">${this.date}</div>
+               <div class="bottom-left em small">${this.created}</div>
           </div>
           <div class="card-body">
             <h5 class="card-title">${this.name}</h5>
@@ -73,8 +73,8 @@ class fun extends place {
   price = "";
 
 
- constructor(date, name, address, zip, city, teaser, eventDate, eventTime, price) {
-    super(date, name, address, zip, city, teaser,);
+ constructor(created, name, address, zip, city, teaser, eventDate, eventTime, price) {
+    super(created, name, address, zip, city, teaser,);
     this.eventDate = eventDate;
     this.eventTime = eventTime;
     this.price = price;
@@ -86,7 +86,7 @@ class fun extends place {
         <div class="card bg-light">
           <div class="box d-none d-md-block relative ">
             <img class="card-img-top" src="${this.teaser}" alt="${this.name}">
-            <div class="bottom-left em small">${this.date}</div>
+            <div class="bottom-left em small">${this.created}</div>
           </div>
           <div class="card-body">
             <h5 class="card-title">${this.name}</h5>
@@ -98,16 +98,20 @@ class fun extends place {
     `;}
   }
 
-let loc1 = new place ("11/12/2019","St.Charles Church","Karlsplatz 1", 1010,"Wien","img/loc1.jpg");
-let loc2 = new place ("12/08/2018","Schönbrunn Park","Maxingstraße 13b", 1130,"Wien","img/loc2.jpg");
-let rest1 = new restaurant ("16/12/2019","ON Restaurant","Wehrgasse 8", 1050,"Wien","img/loc3.jpg","+43(1)5854900","chinese","http://www.restaurant-on.at/");
-let rest2 = new restaurant ("17/10/2018","BioFrische","Stutterheimstraße 6", 1150,"Wien","img/loc4.jpg","+43(1) 9529215","indian","biofrische.wien");
-let eve1 = new fun ("16/12/2020","Cats the musical","Ronacher-Seilerstätte 9", 1010, "Wien","img/loc5.jpg","Friday 15.12.2020","20:00",120);
-let eve2 = new fun ("10/06/2020","Guns ‘n Roses","Ernst-Happel Stadion, Meiereistraße 7", 1020,"Wien","img/loc6.jpg","Saturday 09.06.2020","19:30",95); 
+let loc1 = new place ("2020-02-20","St.Charles Church","Karlsplatz 1", 1010,"Wien","img/loc1.jpg");
+let loc2 = new place ("2019-03-22","Schönbrunn Park","Maxingstraße 13b", 1130,"Wien","img/loc2.jpg");
+let rest1 = new restaurant ("2020-04-21","ON Restaurant","Wehrgasse 8", 1050,"Wien","img/loc3.jpg","+43(1)5854900","chinese","http://www.restaurant-on.at/");
+let rest2 = new restaurant ("2017-05-20","BioFrische","Stutterheimstraße 6", 1150,"Wien","img/loc4.jpg","+43(1) 9529215","indian","www.biofrische.wien");
+let eve1 = new fun ("2020-12-16","Cats the musical","Ronacher-Seilerstätte 9", 1010, "Wien","img/loc5.jpg","Friday 15.12.2020","20:00",120);
+let eve2 = new fun ("2020-06-10","Guns ‘n Roses","Ernst-Happel Stadion, Meiereistraße 7", 1020,"Wien","img/loc6.jpg","Saturday 09.06.2020","19:30",95); 
+let loc3 = new place ("2017-08-17","Schloss Belvedere","Prinz Eugen-Straße 27", 1030,"Wien","img/loc7.jpg");
+let rest3 = new restaurant ("2020-02-23","Max & Benito","Mariahilfer Str. 4", 1020,"Wien","img/loc8.jpg","0660/372 22 18","californian burrito","www.http://maxbenito.at//");
+
+
+
 
 
 function generateBlogCard() {
-
 
 var blogText = "";
 
@@ -117,29 +121,36 @@ for (let i = 0; i < blogCard.length; i++) {
  
 document.getElementById("gallery").innerHTML += blogText;
 
-
-};
-
-function asceOrd(){
-
-  var blogsorted = blogCard.sort((a, b) => b.date - a.date);
-
-
-
- document.getElementById("gallery").innerHTML += blogsorted;
-
 };
 
 
 
-//   var sortedBlogCard = 
+function generateDesBlogCard() {
 
-//   for (let i = 0; i < blogCard.length; i++) {
-//    sortedBlogCard += blogCard[i].display();
+blogCard.sort((a, b) => (a.created < b.created) ? 1 : -1);
 
-//    document.getElementById("gallery").innerHTML += sortedBlogCard;
-// }
+var blogText = "";
+
+for (let i = 0; i < blogCard.length; i++) {
+   blogText += blogCard[i].display();
+}
+ 
+document.getElementById("gallery").innerHTML += blogText;
+
+};
 
 
+function generateAscBlogCard() {
 
+blogCard.sort((a, b) => (a.created > b.created) ? 1 : -1);
+
+var blogText = "";
+
+for (let i = 0; i < blogCard.length; i++) {
+   blogText += blogCard[i].display();
+}
+ 
+document.getElementById("gallery").innerHTML += blogText;
+
+};
 
